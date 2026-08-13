@@ -4,14 +4,14 @@ import BrandCarousel from "@/components/home/BrandCarousel";
 import DestinationsMap from "@/components/home/DestinationsMap";
 import FadeIn from "@/components/home/FadeIn";
 import Image from "next/image";
-import { ShieldCheck, UserCircle, Clock, Bus, Headset, Globe2 } from "lucide-react";
+import { ShieldCheck, UserCheck, Clock, BusFront, Headset, Globe2 } from "lucide-react";
 
 export default function Home() {
   const features = [
     { title: "Safety-Focused", desc: "Passenger safety treated as a priority.", icon: <ShieldCheck size={32} /> },
-    { title: "Professional Drivers", desc: "Experienced, appropriately licensed drivers.", icon: <UserCircle size={32} /> },
+    { title: "Professional Drivers", desc: "Experienced, appropriately licensed drivers.", icon: <UserCheck size={32} /> },
     { title: "Punctual Operations", desc: "Dependable scheduling and coordination.", icon: <Clock size={32} /> },
-    { title: "Comfortable Vehicles", desc: "Options for different group sizes.", icon: <Bus size={32} /> },
+    { title: "Comfortable Vehicles", desc: "Options for different group sizes.", icon: <BusFront size={32} /> },
     { title: "Dedicated Support", desc: "Clear communication for your journey.", icon: <Headset size={32} /> },
     { title: "Responsible Travel", desc: "Efficient group journey planning.", icon: <Globe2 size={32} /> },
   ];
@@ -22,18 +22,20 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full min-h-[85vh] flex items-center justify-center pt-24 pb-12">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0 bg-navy">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/hero-bg.png"
             alt="Luxury Coach"
             fill
-            className="object-cover object-center opacity-40 mix-blend-overlay"
+            className="object-cover object-center"
             priority
           />
+          {/* Dark overlay to ensure text readability while keeping image visible */}
+          <div className="absolute inset-0 bg-navy/40 mix-blend-multiply"></div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+        <div className="relative z-30 container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
           
           <FadeIn direction="right" delay={0.2} className="flex-1 text-white text-center lg:text-left mt-10">
             <h4 className="text-gold font-bold tracking-widest text-sm uppercase mb-4">Professional Group Transport</h4>

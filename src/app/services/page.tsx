@@ -69,7 +69,7 @@ export default function ServicesPage() {
               We go beyond simply providing a vehicle. From the moment you request a quote to the time you arrive at your final destination, our dedicated support team coordinates every detail.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Whether you need waiting time added to your journey, return trips, or a fleet of several vehicles organized for a massive public event, we handle the logistics so you don't have to.
+              Whether you need waiting time added to your journey, return trips, or a fleet of several vehicles organized for a massive public event, we handle the logistics so you don&apos;t have to.
             </p>
             <Link href="/fleet" className="inline-block bg-gold text-white px-8 py-4 font-bold rounded hover:bg-yellow-600 transition-colors">
               View Our Vehicle Options

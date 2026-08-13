@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 export default function HeroQuoteForm() {
   const [formData, setFormData] = useState({
@@ -8,6 +10,7 @@ export default function HeroQuoteForm() {
     startTime: "",
     pickupAddress: "",
     destination: "",
+    additionalDetails: "",
     passengers: "",
     vehicleClass: "Standard",
     name: "",
@@ -18,6 +21,10 @@ export default function HeroQuoteForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handlePhoneChange = (value: string) => {
+    setFormData({ ...formData, phoneNumber: value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -53,6 +60,11 @@ export default function HeroQuoteForm() {
           <input type="text" name="destination" required onChange={handleChange} placeholder="Where are you heading?" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
         </div>
 
+        <div>
+          <label className="block text-sm font-medium text-gray-200 mb-1">Additional Requirements</label>
+          <textarea name="additionalDetails" onChange={handleChange} placeholder="Extra details, luggage requirements, etc." rows={2} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none resize-none" />
+        </div>
+
         <div className="flex gap-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-200 mb-1">Passengers</label>
@@ -85,7 +97,21 @@ export default function HeroQuoteForm() {
           </div>
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-200 mb-1">Phone Number</label>
-            <input type="tel" name="phoneNumber" required onChange={handleChange} placeholder="Phone Number" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
+            <div className="phone-input-wrapper">
+              <PhoneInput
+                country={'gb'}
+                value={formData.phoneNumber}
+                onChange={handlePhoneChange}
+                inputProps={{
+                  name: 'phoneNumber',
+                  required: true,
+                }}
+                containerClass="!w-full"
+                inputClass="!w-full !h-10 !text-black !bg-white/80 !border-none !rounded-md !outline-none !focus:ring-2 !focus:ring-blue-500"
+                buttonClass="!bg-white/50 !border-none !rounded-l-md"
+                dropdownClass="!text-black !bg-white !shadow-2xl"
+              />
+            </div>
           </div>
         </div>
 

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
