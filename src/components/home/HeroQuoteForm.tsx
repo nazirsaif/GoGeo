@@ -7,7 +7,7 @@ export default function HeroQuoteForm() {
     startDate: "",
     startTime: "",
     pickupAddress: "",
-    journeyDescription: "",
+    destination: "",
     passengers: "",
     vehicleClass: "Standard",
     name: "",
@@ -49,8 +49,8 @@ export default function HeroQuoteForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-200 mb-1">Journey Description</label>
-          <textarea name="journeyDescription" required onChange={handleChange} placeholder="Where are you heading?" rows={3} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+          <label className="block text-sm font-medium text-gray-200 mb-1">Destination</label>
+          <input type="text" name="destination" required onChange={handleChange} placeholder="Where are you heading?" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
         </div>
 
         <div className="flex gap-4">

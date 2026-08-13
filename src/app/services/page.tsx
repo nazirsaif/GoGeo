@@ -1,16 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import { Briefcase, Plane, GraduationCap, Bus, HeartHandshake, Trophy, Map, Ship } from "lucide-react";
 
 export default function ServicesPage() {
   const services = [
-    { title: "Corporate Transport", desc: "Reliable transportation for corporate events, employee transfers, and conferences.", icon: "💼" },
-    { title: "Airport Transfers", desc: "Timely meet-and-greet services, flight monitoring, and seamless transfers.", icon: "✈️" },
-    { title: "School Transport", desc: "Safe, vetted, and coordinated educational transport with safeguarding training.", icon: "🏫" },
-    { title: "Private Coach Hire", desc: "Flexible private hire for custom journeys and private groups of any size.", icon: "🚌" },
-    { title: "Weddings & Events", desc: "Elegant transport solutions for guests, bridal parties, and event planners.", icon: "💍" },
-    { title: "Sports-Team Transport", desc: "Spacious coaches with large luggage storage for equipment and teams.", icon: "⚽" },
-    { title: "European Tours", multiDay: true, desc: "Multi-day cross-border transport covering France, Germany, Italy, and beyond.", icon: "🌍" },
-    { title: "Hotel & Cruise Transfers", desc: "Comfortable connections from major ports and luxury hotels across the UK.", icon: "🚢" },
+    { id: "corporate-transport", title: "Corporate Transport", desc: "Reliable transportation for corporate events, employee transfers, and conferences.", icon: <Briefcase size={48} className="text-navy" /> },
+    { id: "airport-transfers", title: "Airport Transfers", desc: "Timely meet-and-greet services, flight monitoring, and seamless transfers.", icon: <Plane size={48} className="text-navy" /> },
+    { id: "school-transport", title: "School Transport", desc: "Safe, vetted, and coordinated educational transport with safeguarding training.", icon: <GraduationCap size={48} className="text-navy" /> },
+    { id: "private-coach-hire", title: "Private Coach Hire", desc: "Flexible private hire for custom journeys and private groups of any size.", icon: <Bus size={48} className="text-navy" /> },
+    { id: "weddings-events", title: "Weddings & Events", desc: "Elegant transport solutions for guests, bridal parties, and event planners.", icon: <HeartHandshake size={48} className="text-navy" /> },
+    { id: "sports-team-transport", title: "Sports-Team Transport", desc: "Spacious coaches with large luggage storage for equipment and teams.", icon: <Trophy size={48} className="text-navy" /> },
+    { id: "european-tours", title: "European Tours", multiDay: true, desc: "Multi-day cross-border transport covering France, Germany, Italy, and beyond.", icon: <Map size={48} className="text-navy" /> },
+    { id: "hotel-cruise-transfers", title: "Hotel & Cruise Transfers", desc: "Comfortable connections from major ports and luxury hotels across the UK.", icon: <Ship size={48} className="text-navy" /> },
   ];
 
   return (
@@ -31,8 +32,8 @@ export default function ServicesPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300 group flex flex-col">
-                <div className="text-5xl mb-6">{service.icon}</div>
+              <div key={idx} id={service.id} className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300 group flex flex-col scroll-mt-24">
+                <div className="mb-6">{service.icon}</div>
                 <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors">{service.title}</h3>
                 <p className="text-gray-600 mb-6 flex-grow">{service.desc}</p>
                 

@@ -32,10 +32,14 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-bold mb-4">Services</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><Link href="/services#airport" className="hover:text-blue-400">Airport Transfers</Link></li>
-            <li><Link href="/services#corporate" className="hover:text-blue-400">Corporate Transport</Link></li>
-            <li><Link href="/services#weddings" className="hover:text-blue-400">Weddings</Link></li>
-            <li><Link href="/services#tours" className="hover:text-blue-400">European Tours</Link></li>
+            <li><Link href="/services#corporate-transport" className="hover:text-blue-400">Corporate Transport</Link></li>
+            <li><Link href="/services#airport-transfers" className="hover:text-blue-400">Airport Transfers</Link></li>
+            <li><Link href="/services#school-transport" className="hover:text-blue-400">School Transport</Link></li>
+            <li><Link href="/services#private-coach-hire" className="hover:text-blue-400">Private Coach Hire</Link></li>
+            <li><Link href="/services#weddings-events" className="hover:text-blue-400">Weddings & Events</Link></li>
+            <li><Link href="/services#sports-team-transport" className="hover:text-blue-400">Sports-Team Transport</Link></li>
+            <li><Link href="/services#european-tours" className="hover:text-blue-400">European Tours</Link></li>
+            <li><Link href="/services#hotel-cruise-transfers" className="hover:text-blue-400">Hotel & Cruise Transfers</Link></li>
           </ul>
         </div>
 
