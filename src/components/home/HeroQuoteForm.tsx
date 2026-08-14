@@ -35,11 +35,11 @@ export default function HeroQuoteForm() {
   };
 
   return (
-    <div className="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-2xl w-full max-w-lg border border-white/20">
-      <h2 className="text-3xl font-bold text-white mb-6">Get an Instant Quote</h2>
+    <div className="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-lg border border-white/20">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Get an Instant Quote</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-200 mb-1">Start Date</label>
             <input type="date" name="startDate" required onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
@@ -65,7 +65,7 @@ export default function HeroQuoteForm() {
           <textarea name="additionalDetails" onChange={handleChange} placeholder="Extra details, luggage requirements, etc." rows={2} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none resize-none" />
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-200 mb-1">Passengers</label>
             <input type="number" name="passengers" required min="1" onChange={handleChange} placeholder="No. of people" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
@@ -79,7 +79,7 @@ export default function HeroQuoteForm() {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-200 mb-1">First Name</label>
             <input type="text" name="name" required onChange={handleChange} placeholder="First Name" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
@@ -90,7 +90,7 @@ export default function HeroQuoteForm() {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-200 mb-1">Email</label>
             <input type="email" name="emailAddress" required onChange={handleChange} placeholder="Email" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />

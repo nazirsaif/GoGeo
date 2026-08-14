@@ -5,17 +5,16 @@ import Link from "next/link";
 export default async function FleetPage(props: { searchParams: Promise<{ category?: string }> }) {
   const searchParams = await props.searchParams;
   const currentCategory = searchParams?.category;
-
   const fleet = [
-    { name: "4 Seater Mercedes VIP", img: "/fleet/4.jpeg", capacity: 4, type: "VIP Car", desc: "Perfect for discrete, luxury executive travel.", category: "executive" },
-    { name: "7 Seater Mercedes VIP", img: "/fleet/5.jpeg", capacity: 7, type: "VIP MPV", desc: "Spacious luxury for small corporate teams or families.", category: "executive" },
-    { name: "16 Seater Splinter", img: "/fleet/6.jpeg", capacity: 16, type: "Minibus", desc: "Ideal for airport transfers and small group outings.", category: "standard" },
-    { name: "20 Seater VIP", img: "/fleet/7.jpeg", capacity: 20, type: "VIP Minibus", desc: "Premium comfort for medium-sized executive groups.", category: "executive" },
-    { name: "36 Seater Bus", img: "/fleet/8.jpeg", capacity: 36, type: "Mid-size Coach", desc: "Reliable and comfortable for school trips and sports teams.", category: "standard" },
-    { name: "45 Seater Bus", img: "/fleet/1.jpeg", capacity: 45, type: "Standard Coach", desc: "Great for corporate events and domestic tours.", category: "standard" },
-    { name: "55 Seater Bus", img: "/fleet/2.jpeg", capacity: 55, type: "Executive Coach", desc: "Luxury long-distance travel.", premium: true, category: "executive" },
-    { name: "65 Seater Bus", img: "/fleet/3.jpeg", capacity: 65, type: "Executive Coach", desc: "High capacity premium transport.", premium: true, category: "executive" },
-    { name: "75+ Seater Bus", img: "/fleet/1.jpeg", capacity: 75, type: "Double Decker", desc: "Maximum capacity for massive events and school groups.", premium: true, category: "standard" },
+    { name: "4 Seater Mercedes E/S-Class", img: "/fleet/4.jpeg", capacity: 4, type: "VIP Car", desc: "Perfect for discrete, luxury executive travel.", category: "executive" },
+    { name: "7 Seater Mercedes V-Class", img: "/fleet/5.jpeg", capacity: 7, type: "VIP MPV", desc: "Spacious luxury for small corporate teams or families.", category: "executive" },
+    { name: "16 Seater Mercedes Sprinter", img: "/fleet/6.jpeg", capacity: 16, type: "Minibus", desc: "Ideal for airport transfers and small group outings.", category: "standard" },
+    { name: "20 Seater VIP Minibus", img: "/fleet/7.jpeg", capacity: 20, type: "VIP Minibus", desc: "Premium comfort for medium-sized executive groups.", category: "executive" },
+    { name: "36 Seater Midi-Coach", img: "/fleet/8.jpeg", capacity: 36, type: "Midi-Coach", desc: "Reliable and comfortable for school trips and sports teams.", category: "standard" },
+    { name: "49 Seater Standard Coach", img: "/fleet/1.jpeg", capacity: 49, type: "Standard Coach", desc: "Great for corporate events and domestic tours.", category: "standard" },
+    { name: "53 Seater Executive Coach", img: "/fleet/2.jpeg", capacity: 53, type: "Executive Coach", desc: "Luxury long-distance travel.", premium: true, category: "executive" },
+    { name: "65 Seater High-Capacity Coach", img: "/fleet/3.jpeg", capacity: 65, type: "Executive Coach", desc: "High capacity premium transport.", premium: true, category: "executive" },
+    { name: "72 Seater Double Decker", img: "/fleet/1.jpeg", capacity: 72, type: "Double Decker", desc: "Maximum capacity for massive events and school groups.", premium: true, category: "standard" },
   ];
 
   // Filter if category matches, otherwise show all

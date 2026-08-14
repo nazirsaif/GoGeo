@@ -3,6 +3,8 @@ import VehicleCategories from "@/components/home/VehicleCategories";
 import BrandCarousel from "@/components/home/BrandCarousel";
 import DestinationsMap from "@/components/home/DestinationsMap";
 import FadeIn from "@/components/home/FadeIn";
+import TrustBadges from "@/components/home/TrustBadges";
+import ReviewsSection from "@/components/home/ReviewsSection";
 import Image from "next/image";
 import { ShieldCheck, UserCheck, Clock, BusFront, Headset, Globe2 } from "lucide-react";
 
@@ -20,7 +22,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans bg-gray-50">
       
       {/* Hero Section */}
-      <section className="relative w-full min-h-[85vh] flex items-center justify-center pt-24 pb-12">
+      <section className="relative w-full min-h-screen md:min-h-[85vh] flex items-center justify-center pt-32 pb-24 md:pt-24 md:pb-12">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -56,7 +58,7 @@ export default function Home() {
       </section>
 
       {/* Feature Boxes (from reference image) */}
-      <section className="relative z-20 -mt-16 container mx-auto px-6">
+      <section className="relative z-20 -mt-8 md:-mt-16 container mx-auto px-6">
         <FadeIn delay={0.6} className="bg-white rounded-xl shadow-xl border border-gray-100 p-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
           {features.map((f, i) => (
             <div key={i} className="flex flex-col items-center group">
@@ -90,6 +92,12 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
+      {/* Reviews Section */}
+      <ReviewsSection />
 
     </div>
   );
