@@ -1,15 +1,20 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
       <div className="container mx-auto px-6 h-24 flex items-center justify-between">
         
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.jpeg" alt="GoGeo Buses Logo" width={64} height={64} className="object-contain" priority />
+          <Image src="/logo.jpeg" alt="GoGeo Buses Logo" width={64} height={64} className="object-contain rounded-sm" priority />
         </Link>
 
         {/* Navigation */}
@@ -22,14 +27,36 @@ export default function Header() {
           <Link href="/contact" className="text-sm font-bold text-navy hover:text-gold transition-colors">Contact Us</Link>
         </nav>
 
-        {/* CTA */}
+        {/* CTA & Hamburger */}
         <div className="flex items-center gap-4">
-          <Link href="/#quote" className="hidden sm:inline-flex bg-gold text-white px-6 py-3 font-bold text-sm hover:bg-yellow-600 transition-colors shadow-sm">
+          <Link href="/#quote" className="hidden sm:inline-flex bg-gold text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-600 hover:shadow-md transition-all transform hover:-translate-y-0.5">
             Request a Quote
           </Link>
+          
+          <button 
+            className="md:hidden text-navy hover:text-gold transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
 
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-100 shadow-lg py-6 flex flex-col px-6 gap-6">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">Home</Link>
+          <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">About Us</Link>
+          <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">Services</Link>
+          <Link href="/fleet" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">Vehicle Options</Link>
+          <Link href="/destinations" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">Destinations</Link>
+          <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">Contact Us</Link>
+          <Link href="/#quote" onClick={() => setIsMobileMenuOpen(false)} className="text-center bg-gold text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-yellow-600 transition-colors mt-2">
+            Request a Quote
+          </Link>
+        </div>
+      )}
     </header>
   );
 }

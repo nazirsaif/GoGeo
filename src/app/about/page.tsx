@@ -39,11 +39,12 @@ export default function AboutPage() {
             </div>
           </div>
           
-          <div className="flex-1 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
-             {/* Placeholder for an actual about image. We will use a generic grey box or generate one later if needed, for now a styled div acts as the placeholder */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-navy to-blue-900 flex items-center justify-center text-white/50">
-               <span className="text-lg">Premium Coach Interior Image</span>
-             </div>
+          <div className="w-full relative h-[300px] sm:h-[400px] md:h-[500px] md:flex-1 rounded-2xl overflow-hidden shadow-2xl shrink-0">
+            <img 
+              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200" 
+              alt="Premium Coach Interior" 
+              className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
           </div>
         </div>
       </section>

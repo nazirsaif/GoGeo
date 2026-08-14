@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Briefcase, Plane, GraduationCap, Bus, HeartHandshake, Trophy, Map, Ship } from "lucide-react";
+import { Briefcase, Plane, GraduationCap, Bus, HeartHandshake, Trophy, Map, Ship, Flag, Music, Ticket, Clock } from "lucide-react";
 
 export default function ServicesPage() {
   const services = [
@@ -12,6 +12,10 @@ export default function ServicesPage() {
     { id: "sports-team-transport", title: "Sports-Team Transport", desc: "Spacious coaches with large luggage storage for equipment and teams.", icon: <Trophy size={48} className="text-navy" /> },
     { id: "european-tours", title: "European Tours", multiDay: true, desc: "Multi-day cross-border transport covering France, Germany, Italy, and beyond.", icon: <Map size={48} className="text-navy" /> },
     { id: "hotel-cruise-transfers", title: "Hotel & Cruise Transfers", desc: "Comfortable connections from major ports and luxury hotels across the UK.", icon: <Ship size={48} className="text-navy" /> },
+    { id: "f1-events", title: "F1 Events", desc: "Dedicated group transport for Formula 1 races, ensuring you arrive on time and never miss a lap.", icon: <Flag size={48} className="text-navy" /> },
+    { id: "music-festivals", title: "Music Festivals", desc: "Reliable coach hire for festival-goers, with plenty of room for luggage and camping gear.", icon: <Music size={48} className="text-navy" /> },
+    { id: "exhibitions", title: "Exhibitions & Trade Shows", desc: "Shuttle services and VIP transport for massive public exhibitions and corporate trade shows.", icon: <Ticket size={48} className="text-navy" /> },
+    { id: "emergency-booking", title: "Emergency & Last Minute", desc: "We always have 4-5 buses on standby, ready to dispatch for any last-minute or emergency bookings.", icon: <Clock size={48} className="text-navy" /> },
   ];
 
   return (

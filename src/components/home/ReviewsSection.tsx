@@ -36,7 +36,7 @@ export default function ReviewsSection() {
           <h2 className="text-sm font-bold text-gold tracking-widest uppercase mb-3">Client Testimonials</h2>
           <h3 className="text-4xl md:text-5xl font-serif font-bold text-navy mb-6">Trusted by Thousands</h3>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Don't just take our word for it. Read what our clients have to say about their journey with us.
+            Don&apos;t just take our word for it. Read what our clients have to say about their journey with us.
           </p>
         </FadeIn>
 
@@ -53,7 +53,7 @@ export default function ReviewsSection() {
                 </div>
                 
                 <p className="text-gray-600 mb-8 flex-grow leading-relaxed relative z-10 italic">
-                  "{review.text}"
+                  &quot;{review.text}&quot;
                 </p>
                 
                 <div className="flex items-center gap-4">

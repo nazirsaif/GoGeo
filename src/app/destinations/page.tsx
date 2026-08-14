@@ -1,35 +1,85 @@
 import React from "react";
 import Link from "next/link";
+import CountryCarousel from "@/components/destinations/CountryCarousel";
 
 export default function DestinationsPage() {
   const regions = [
     {
-      country: "United Kingdom",
-      cities: ["London", "Manchester", "Liverpool", "Birmingham"]
+      name: "United Kingdom & Ireland",
+      countries: [
+        { name: "United Kingdom", cities: ["London", "Manchester", "Liverpool", "Birmingham", "Edinburgh"] },
+        { name: "Ireland", cities: ["Dublin"] }
+      ]
     },
     {
-      country: "Scotland & Ireland",
-      cities: ["Edinburgh", "Dublin"]
+      name: "Western Europe",
+      countries: [
+        { name: "France", cities: ["Paris"] },
+        { name: "Belgium", cities: ["Brussels"] },
+        { name: "Monaco", cities: ["Monaco Ville", "Monte Carlo"] },
+        { name: "Netherlands" },
+        { name: "Luxembourg" }
+      ]
     },
     {
-      country: "France & Monaco",
-      cities: ["Paris", "Monaco Ville", "Monte Carlo"]
+      name: "Central Europe",
+      countries: [
+        { name: "Germany", cities: ["Berlin", "Munich", "Hamburg", "Frankfurt"] },
+        { name: "Switzerland", cities: ["Zurich", "Geneva", "Bern"] },
+        { name: "Hungary", cities: ["Budapest"] },
+        { name: "Austria" },
+        { name: "Liechtenstein" },
+        { name: "Czech Republic (Czechia)" },
+        { name: "Slovakia" },
+        { name: "Poland" }
+      ]
     },
     {
-      country: "Italy & Spain",
-      cities: ["Rome", "Milan", "Naples", "Seville", "Barcelona", "Madrid", "Marbella"]
+      name: "Southern Europe",
+      countries: [
+        { name: "Italy", cities: ["Rome", "Milan", "Naples"] },
+        { name: "Spain", cities: ["Seville", "Barcelona", "Madrid", "Marbella"] },
+        { name: "Portugal" },
+        { name: "Greece" },
+        { name: "Malta" },
+        { name: "Cyprus" },
+        { name: "Vatican City" },
+        { name: "San Marino" }
+      ]
     },
     {
-      country: "Germany & Central Europe",
-      cities: ["Berlin", "Munich", "Hamburg", "Frankfurt", "Budapest (Hungary)"]
+      name: "Northern Europe",
+      countries: [
+        { name: "Norway", cities: ["Oslo"] },
+        { name: "Sweden", cities: ["Stockholm"] },
+        { name: "Finland" },
+        { name: "Denmark" },
+        { name: "Iceland" }
+      ]
     },
     {
-      country: "Nordics & Switzerland",
-      cities: ["Oslo (Norway)", "Stockholm (Sweden)", "Zurich", "Geneva", "Bern"]
+      name: "Southeastern Europe (Balkans)",
+      countries: [
+        { name: "Croatia" },
+        { name: "Bosnia and Herzegovina" },
+        { name: "Serbia" },
+        { name: "Montenegro" },
+        { name: "Slovenia" },
+        { name: "Turkey" }
+      ]
     },
     {
-      country: "Belgium",
-      cities: ["Brussels"]
+      name: "Eastern Europe & Baltics",
+      countries: [
+        { name: "Estonia" },
+        { name: "Latvia" },
+        { name: "Lithuania" },
+        { name: "Belarus" },
+        { name: "Moldova" },
+        { name: "Romania" },
+        { name: "Bulgaria" },
+        { name: "Georgia" }
+      ]
     }
   ];
 
@@ -41,25 +91,35 @@ export default function DestinationsPage() {
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl font-serif font-bold mb-4">Destinations</h1>
           <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto">
-            Providing premium group travel across the UK and the most iconic cities in Europe.
+            Providing premium group travel across the UK and {regions.reduce((acc, region) => acc + region.countries.length, 0)} iconic European countries.
           </p>
         </div>
       </section>
 
+      {/* Country Marquee Slideshow */}
+      <CountryCarousel />
+
       {/* Destinations List */}
       <section className="py-20">
-        <div className="container mx-auto px-6 max-w-5xl">
+        <div className="container mx-auto px-6 max-w-7xl">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {regions.map((region, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-2xl font-bold text-navy mb-4 border-b-2 border-gold inline-block pb-1">
-                  {region.country}
+              <div key={idx} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+                <h3 className="text-2xl font-bold text-navy mb-6 border-b-2 border-gold inline-block pb-1">
+                  {region.name}
                 </h3>
-                <ul className="space-y-2 mt-4">
-                  {region.cities.map((city, i) => (
-                    <li key={i} className="flex items-center text-gray-700 text-lg">
-                      <span className="text-gold mr-3">✦</span> {city}
+                <ul className="space-y-4">
+                  {region.countries.map((country, i) => (
+                    <li key={i} className="text-gray-700">
+                      <span className="font-bold text-navy flex items-center gap-2">
+                        <span className="text-gold text-sm">✦</span> {country.name}
+                      </span>
+                      {country.cities && (
+                        <span className="block text-sm text-gray-500 mt-1 ml-6 leading-relaxed">
+                          {country.cities.join(" • ")}
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>

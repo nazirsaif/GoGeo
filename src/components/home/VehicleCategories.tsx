@@ -10,7 +10,7 @@ export default function VehicleCategories() {
       <Link href="/fleet?category=executive" className="flex-1 group">
         <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
           <Image 
-            src="/fleet/4.jpeg" 
+            src="/fleet/e-class.jpeg" 
             alt="Executive Vehicles" 
             fill 
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -33,7 +33,7 @@ export default function VehicleCategories() {
       <Link href="/fleet?category=standard" className="flex-1 group">
         <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
           <Image 
-            src="/fleet/1.jpeg" 
+            src="/fleet/53-seater.jpeg" 
             alt="Standard Vehicles" 
             fill 
             sizes="(max-width: 768px) 100vw, 50vw"

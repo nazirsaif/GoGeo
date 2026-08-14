@@ -32,7 +32,7 @@ export default function BrandCarousel() {
         >
           {/* Double the list to create a seamless infinite scroll effect */}
           {[...brands, ...brands].map((brand, i) => (
-            <div key={i} className="flex items-center gap-2 cursor-pointer opacity-80 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+            <div key={i} className="flex items-center gap-2 cursor-pointer transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 drop-shadow-sm hover:drop-shadow-md">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={brand.url}

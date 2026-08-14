@@ -1,7 +1,8 @@
 import HeroQuoteForm from "@/components/home/HeroQuoteForm";
 import VehicleCategories from "@/components/home/VehicleCategories";
 import BrandCarousel from "@/components/home/BrandCarousel";
-import DestinationsMap from "@/components/home/DestinationsMap";
+import CountriesCarousel from "@/components/home/CountriesCarousel";
+
 import FadeIn from "@/components/home/FadeIn";
 import TrustBadges from "@/components/home/TrustBadges";
 import ReviewsSection from "@/components/home/ReviewsSection";
@@ -22,15 +23,16 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans bg-gray-50">
       
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen md:min-h-[85vh] flex items-center justify-center pt-32 pb-24 md:pt-24 md:pb-12">
+      <section id="quote" className="relative w-full min-h-screen md:min-h-[85vh] flex items-center justify-center pt-32 pb-24 md:pt-24 md:pb-12">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-bg.png"
+            src="/background.jpeg"
             alt="Luxury Coach"
             fill
             className="object-cover object-center"
             priority
+            quality={100}
           />
           {/* Dark overlay to ensure text readability while keeping image visible */}
           <div className="absolute inset-0 bg-navy/40 mix-blend-multiply"></div>
@@ -75,8 +77,8 @@ export default function Home() {
       {/* Brand Carousel */}
       <BrandCarousel />
 
-      {/* Destinations Map */}
-      <DestinationsMap />
+      {/* Countries Carousel */}
+      <CountriesCarousel />
 
       {/* Vehicle Categories Flow */}
       <section className="py-24 bg-gray-50">

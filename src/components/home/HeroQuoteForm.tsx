@@ -35,50 +35,10 @@ export default function HeroQuoteForm() {
   };
 
   return (
-    <div className="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-lg border border-white/20">
-      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Get an Instant Quote</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <div className="bg-white/10 backdrop-blur-md p-4 sm:p-8 rounded-xl shadow-2xl w-full max-w-lg border border-white/20">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Get an Instant Quote</h2>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
         
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-200 mb-1">Start Date</label>
-            <input type="date" name="startDate" required onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
-          </div>
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-200 mb-1">Start Time</label>
-            <input type="time" name="startTime" required onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-200 mb-1">Pickup Address</label>
-          <input type="text" name="pickupAddress" required onChange={handleChange} placeholder="Enter full address" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-200 mb-1">Destination</label>
-          <input type="text" name="destination" required onChange={handleChange} placeholder="Where are you heading?" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-200 mb-1">Additional Requirements</label>
-          <textarea name="additionalDetails" onChange={handleChange} placeholder="Extra details, luggage requirements, etc." rows={2} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none resize-none" />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-200 mb-1">Passengers</label>
-            <input type="number" name="passengers" required min="1" onChange={handleChange} placeholder="No. of people" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
-          </div>
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-200 mb-1">Vehicle Class</label>
-            <select name="vehicleClass" onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none">
-              <option value="Standard">Standard</option>
-              <option value="Executive">Executive VIP</option>
-            </select>
-          </div>
-        </div>
-
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-200 mb-1">First Name</label>
@@ -113,6 +73,46 @@ export default function HeroQuoteForm() {
               />
             </div>
           </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex-1">
+            <label className="block text-sm font-medium text-gray-200 mb-1">Start Date</label>
+            <input type="date" name="startDate" required onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+          <div className="flex-1">
+            <label className="block text-sm font-medium text-gray-200 mb-1">Start Time</label>
+            <input type="time" name="startTime" required onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-200 mb-1">Pickup Address</label>
+          <input type="text" name="pickupAddress" required onChange={handleChange} placeholder="Enter full address" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-200 mb-1">Destination</label>
+          <input type="text" name="destination" required onChange={handleChange} placeholder="Where are you heading?" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex-1">
+            <label className="block text-sm font-medium text-gray-200 mb-1">Passengers</label>
+            <input type="number" name="passengers" required min="1" onChange={handleChange} placeholder="No. of people" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+          <div className="flex-1">
+            <label className="block text-sm font-medium text-gray-200 mb-1">Vehicle Class</label>
+            <select name="vehicleClass" onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none">
+              <option value="Standard">Standard</option>
+              <option value="Executive">Executive VIP</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-200 mb-1">Additional Requirements</label>
+          <textarea name="additionalDetails" onChange={handleChange} placeholder="Extra details, luggage requirements, etc." rows={2} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none resize-none" />
         </div>
 
         <button type="submit" className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-md transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
