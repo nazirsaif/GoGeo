@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      
+
       {/* Page Header */}
       <section className="bg-navy py-20 text-white">
         <div className="container mx-auto px-6 text-center">
@@ -27,22 +27,26 @@ export default function AboutPage() {
             <p className="text-gray-600 mb-6 leading-relaxed">
               We own and operate our expansive fleet, meaning we have full control over the quality, safety, and maintenance of every vehicle. From comfortable minibuses to 75-seater double-decker coaches, we guarantee premium transportation at affordable prices.
             </p>
-            <div className="flex gap-4 mt-8">
-              <div className="bg-white border-l-4 border-gold p-4 shadow-sm">
+            <div className="flex flex-wrap gap-4 mt-8">
+              <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
                 <span className="block text-2xl font-bold text-navy">15+</span>
                 <span className="text-sm text-gray-500 font-medium">Years Experience</span>
               </div>
-              <div className="bg-white border-l-4 border-gold p-4 shadow-sm">
-                <span className="block text-2xl font-bold text-navy">100%</span>
-                <span className="text-sm text-gray-500 font-medium">Owned Fleet</span>
+              <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
+                <span className="block text-2xl font-bold text-navy">6,000+</span>
+                <span className="text-sm text-gray-500 font-medium">Bookings Done</span>
+              </div>
+              <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
+                <span className="block text-2xl font-bold text-navy">15,000+</span>
+                <span className="text-sm text-gray-500 font-medium">Miles Covered</span>
               </div>
             </div>
           </div>
-          
+
           <div className="w-full relative h-[300px] sm:h-[400px] md:h-[500px] md:flex-1 rounded-2xl overflow-hidden shadow-2xl shrink-0">
-            <img 
-              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200" 
-              alt="Premium Coach Interior" 
+            <img
+              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200"
+              alt="Premium Coach Interior"
               className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
@@ -56,7 +60,7 @@ export default function AboutPage() {
             <h2 className="text-4xl font-serif font-bold text-navy mb-4">What Sets Us Apart</h2>
             <p className="text-lg text-gray-600">The strongest genuine reason customers choose us is premium group travel at affordable prices.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="text-gold text-4xl mb-4">👔</div>

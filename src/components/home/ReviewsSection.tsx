@@ -45,17 +45,17 @@ export default function ReviewsSection() {
             <FadeIn key={idx} delay={idx * 0.2}>
               <div className="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 h-full flex flex-col relative group hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all">
                 <Quote className="absolute top-6 right-6 text-gold/20 w-12 h-12 transform group-hover:scale-110 transition-transform" />
-                
+
                 <div className="flex gap-1 mb-6">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} size={18} className="fill-gold text-gold" />
                   ))}
                 </div>
-                
+
                 <p className="text-gray-600 mb-8 flex-grow leading-relaxed relative z-10 italic">
                   &quot;{review.text}&quot;
                 </p>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {review.name.charAt(0)}

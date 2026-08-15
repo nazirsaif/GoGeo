@@ -9,7 +9,7 @@ export default function TrustBadges() {
     <section className="bg-white border-b border-gray-100 py-6 relative z-30">
       <div className="container mx-auto px-6">
         <FadeIn delay={0.2} className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 opacity-80">
-          
+
           {/* Trustpilot-style Badge */}
           <div className="flex flex-col items-center">
             <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Excellent on</span>
@@ -21,7 +21,7 @@ export default function TrustBadges() {
                 ))}
               </div>
             </div>
-            <span className="text-xs text-gray-500 mt-1">4.9 / 5 from 1,200+ reviews</span>
+            <span className="text-xs text-gray-500 mt-1">4.6 / 5</span>
           </div>
 
           <div className="hidden md:block w-px h-12 bg-gray-200"></div>

@@ -9,12 +9,19 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
-      <div className="container mx-auto px-6 h-24 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+      {/* Slogan Bar */}
+      <div className="bg-navy text-gold text-xs font-bold text-center py-2 tracking-widest uppercase shadow-sm">
+        Go together, Go premium
+      </div>
+      
+      {/* Main Navigation */}
+      <div className="bg-gray-200/95 backdrop-blur-md shadow-sm border-b border-gray-100 w-full">
+        <div className="container mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
         
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.jpeg" alt="GoGeo Buses Logo" width={64} height={64} className="object-contain rounded-sm" priority />
+          <Image src="/logo.jpeg" alt="GoGeo Buses Logo" width={64} height={64} className="object-contain rounded-sm" priority style={{ width: "auto" }} />
         </Link>
 
         {/* Navigation */}
@@ -45,7 +52,7 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-100 shadow-lg py-6 flex flex-col px-6 gap-6">
+        <div className="md:hidden absolute top-24 left-0 w-full bg-gray-200 border-b border-gray-100 shadow-lg py-6 flex flex-col px-6 gap-6">
           <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">Home</Link>
           <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">About Us</Link>
           <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-navy hover:text-gold transition-colors">Services</Link>
@@ -57,6 +64,7 @@ export default function Header() {
           </Link>
         </div>
       )}
+      </div>
     </header>
   );
 }

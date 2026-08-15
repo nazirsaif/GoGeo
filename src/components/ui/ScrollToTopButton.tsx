@@ -10,7 +10,7 @@ export default function ScrollToTopButton() {
   return (
     <button 
       onClick={scrollToTop}
-      className="ml-4 bg-white text-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-200 hover:-translate-y-1 transition-all duration-300 border border-gray-200 flex items-center justify-center"
+      className="ml-4 bg-gray-200 text-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-200 hover:-translate-y-1 transition-all duration-300 border border-gray-200 flex items-center justify-center"
       aria-label="Scroll to top"
     >
       <ArrowUp size={18} strokeWidth={2.5} />

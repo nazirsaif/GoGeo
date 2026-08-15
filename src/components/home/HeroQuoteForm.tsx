@@ -12,7 +12,7 @@ export default function HeroQuoteForm() {
     destination: "",
     additionalDetails: "",
     passengers: "",
-    vehicleClass: "Standard",
+    isRoundTrip: false,
     name: "",
     surname: "",
     emailAddress: "",
@@ -69,7 +69,7 @@ export default function HeroQuoteForm() {
                 containerClass="!w-full"
                 inputClass="!w-full !h-10 !text-black !bg-white/80 !border-none !rounded-md !outline-none !focus:ring-2 !focus:ring-blue-500"
                 buttonClass="!bg-white/50 !border-none !rounded-l-md"
-                dropdownClass="!text-black !bg-white !shadow-2xl"
+                dropdownClass="!text-black !bg-gray-200 !shadow-2xl"
               />
             </div>
           </div>
@@ -101,18 +101,22 @@ export default function HeroQuoteForm() {
             <label className="block text-sm font-medium text-gray-200 mb-1">Passengers</label>
             <input type="number" name="passengers" required min="1" onChange={handleChange} placeholder="No. of people" className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
           </div>
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-200 mb-1">Vehicle Class</label>
-            <select name="vehicleClass" onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none">
-              <option value="Standard">Standard</option>
-              <option value="Executive">Executive VIP</option>
-            </select>
+          <div className="flex-1 flex items-center sm:pt-6">
+            <label className="flex items-center gap-3 cursor-pointer group">
+              <input 
+                type="checkbox" 
+                name="isRoundTrip" 
+                onChange={(e) => setFormData({...formData, isRoundTrip: e.target.checked})} 
+                className="w-5 h-5 cursor-pointer rounded border-none bg-white/80 text-blue-600 focus:ring-2 focus:ring-blue-500"
+              />
+              <span className="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">Round Trip? (Yes)</span>
+            </label>
           </div>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-200 mb-1">Additional Requirements</label>
-          <textarea name="additionalDetails" onChange={handleChange} placeholder="Extra details, luggage requirements, etc." rows={2} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none resize-none" />
+          <textarea name="additionalDetails" onChange={handleChange} placeholder="Extra details, luggage requirements, etc." rows={6} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none resize-none" />
         </div>
 
         <button type="submit" className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-md transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">

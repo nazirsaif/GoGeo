@@ -18,13 +18,13 @@ export default async function FleetPage(props: { searchParams: Promise<{ categor
   ];
 
   // Filter if category matches, otherwise show all
-  const filteredFleet = currentCategory 
-    ? fleet.filter(v => v.category === currentCategory) 
+  const filteredFleet = currentCategory
+    ? fleet.filter(v => v.category === currentCategory)
     : fleet;
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      
+
       {/* Page Header */}
       <section className="bg-navy py-20 text-white border-b-4 border-gold">
         <div className="container mx-auto px-6 text-center">
@@ -34,11 +34,11 @@ export default async function FleetPage(props: { searchParams: Promise<{ categor
           <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto">
             From 4-seater VIP Mercedes to 75+ seater Double-Decker coaches, our 100% owned fleet ensures safety and comfort.
           </p>
-          
+
           <div className="mt-8 flex justify-center gap-4">
-             <Link href="/fleet" className={`px-6 py-2 rounded-full font-bold text-sm transition-colors ${!currentCategory ? 'bg-gold text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>All Vehicles</Link>
-             <Link href="/fleet?category=executive" className={`px-6 py-2 rounded-full font-bold text-sm transition-colors ${currentCategory === 'executive' ? 'bg-gold text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>Executive</Link>
-             <Link href="/fleet?category=standard" className={`px-6 py-2 rounded-full font-bold text-sm transition-colors ${currentCategory === 'standard' ? 'bg-gold text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>Standard</Link>
+            <Link href="/fleet" className={`px-6 py-2 rounded-full font-bold text-sm transition-colors ${!currentCategory ? 'bg-gold text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>All Vehicles</Link>
+            <Link href="/fleet?category=executive" className={`px-6 py-2 rounded-full font-bold text-sm transition-colors ${currentCategory === 'executive' ? 'bg-gold text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>Executive</Link>
+            <Link href="/fleet?category=standard" className={`px-6 py-2 rounded-full font-bold text-sm transition-colors ${currentCategory === 'standard' ? 'bg-gold text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}>Standard</Link>
           </div>
         </div>
       </section>
@@ -51,24 +51,25 @@ export default async function FleetPage(props: { searchParams: Promise<{ categor
               <div key={idx} className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
                 {/* Image Area */}
                 <div className="relative h-64 w-full bg-gray-200">
-                  <Image 
-                    src={vehicle.img} 
-                    alt={vehicle.name} 
-                    fill 
+                  <Image
+                    src={vehicle.img}
+                    alt={vehicle.name}
+                    fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    priority={idx < 2}
                   />
                   <div className="absolute top-4 right-4 bg-navy text-white px-3 py-1 rounded-full text-sm font-bold shadow-md">
                     {vehicle.capacity} Seats
                   </div>
                 </div>
-                
+
                 {/* Content Area */}
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-navy mb-2">{vehicle.name}</h3>
                   <p className="text-gold font-bold text-sm uppercase tracking-wide mb-3">{vehicle.type}</p>
                   <p className="text-gray-600 mb-6">{vehicle.desc}</p>
-                  
+
                   {/* Standard Amenities */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Air Conditioning</span>

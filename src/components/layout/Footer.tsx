@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="col-span-1 md:col-span-1">
           <Link href="/" className="inline-block mb-4">
-            <Image src="/logo.jpeg" alt="GoGeo Logo" width={140} height={48} className="object-contain rounded-sm" />
+            <Image src="/logo.jpeg" alt="GoGeo Logo" width={140} height={48} className="object-contain rounded-sm" style={{ width: "auto" }} />
           </Link>
           <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
             Premium bus rental and transport solutions across the UK and Europe. Your journey, our priority.
@@ -47,18 +47,40 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h4 className="text-white font-bold mb-4">Contact Us</h4>
-          <ul className="space-y-2 text-sm">
-            <li>Email: <a href="mailto:sales@gogeo.com" className="hover:text-gold transition-colors">sales@gogeo.com</a></li>
-            <li>Phone: <a href="tel:+447537131994" className="hover:text-gold transition-colors">+44 7537 131994</a></li>
+          <ul className="text-gray-400 space-y-2 text-sm">
+            <li>Email: <a href="mailto:info@gogeobuses.com" className="hover:text-gold transition-colors">info@gogeobuses.com</a></li>
+            <li>Phone: <a href="tel:+447537158644" className="hover:text-gold transition-colors">+44 7537 158644</a></li>
             <li>Address: London, United Kingdom</li>
           </ul>
         </div>
 
       </div>
       
-      <div className="container mx-auto px-6 mt-8 pt-6 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p>&copy; {new Date().getFullYear()} GoGeo Buses LTD. All rights reserved.</p>
-        <div className="flex gap-4 items-center">
+      <div className="container mx-auto px-6 mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p className="text-xs text-gray-500">&copy; {new Date().getFullYear()} GoGeo Buses LTD. All rights reserved.</p>
+        
+        {/* Payment Methods */}
+        <div className="flex gap-3 items-center">
+          {[
+            { name: 'Visa', url: 'https://raw.githubusercontent.com/aaronfagan/svg-credit-card-payment-icons/main/logo/visa.svg', invert: false },
+            { name: 'Mastercard', url: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg', invert: false },
+            { name: 'PayPal', url: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg', invert: false },
+            { name: 'Apple Pay', url: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg', invert: true },
+            { name: 'Stripe', url: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg', invert: false }
+          ].map((card) => (
+            <div key={card.name} className="w-16 h-10 bg-white/10 rounded-md flex items-center justify-center border border-white/10 shadow-sm" title={card.name}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src={card.url} 
+                alt={card.name} 
+                className="max-w-[40px] max-h-[20px] object-contain transition-transform hover:scale-110"
+                style={card.invert ? { filter: "brightness(0) invert(1)" } : {}} 
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="flex gap-4 items-center text-xs text-gray-500">
           <Link href="/privacy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-gray-300 transition-colors">Terms of Service</Link>
           <div className="ml-4 border-l border-gray-700 pl-4">

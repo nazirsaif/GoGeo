@@ -20,7 +20,7 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      
+
       {/* Page Header */}
       <section className="bg-navy py-20 text-white border-b-4 border-gold">
         <div className="container mx-auto px-6 text-center">
@@ -40,7 +40,7 @@ export default function ServicesPage() {
                 <div className="mb-6">{service.icon}</div>
                 <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors">{service.title}</h3>
                 <p className="text-gray-600 mb-6 flex-grow">{service.desc}</p>
-                
+
                 <Link href="/contact" className="text-sm font-bold text-navy group-hover:text-gold transition-colors inline-flex items-center gap-1 mt-auto">
                   Request Quote <span aria-hidden="true">&rarr;</span>
                 </Link>
@@ -54,19 +54,19 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1">
-             <div className="bg-navy p-10 rounded-2xl text-white shadow-2xl relative">
-                <div className="absolute -top-6 -left-6 text-gold text-6xl opacity-50">★</div>
-                <h3 className="text-3xl font-serif font-bold mb-6">The GoGeo Standard</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-center gap-3"><span className="text-gold">✓</span> Flight Details Monitored</li>
-                  <li className="flex items-center gap-3"><span className="text-gold">✓</span> Multiple Pickup Points Arranged</li>
-                  <li className="flex items-center gap-3"><span className="text-gold">✓</span> Drivers Can Contact Organizers directly</li>
-                  <li className="flex items-center gap-3"><span className="text-gold">✓</span> Multilingual Support Staff Available</li>
-                  <li className="flex items-center gap-3"><span className="text-gold">✓</span> 24/7 Emergency & Out-of-Hours Support</li>
-                </ul>
-             </div>
+            <div className="bg-navy p-10 rounded-2xl text-white shadow-2xl relative">
+              <div className="absolute -top-6 -left-6 text-gold text-6xl opacity-50">★</div>
+              <h3 className="text-3xl font-serif font-bold mb-6">The GoGeo Standard</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3"><span className="text-gold">✓</span> Flight Details Monitored</li>
+                <li className="flex items-center gap-3"><span className="text-gold">✓</span> Multiple Pickup Points Arranged</li>
+                <li className="flex items-center gap-3"><span className="text-gold">✓</span> Drivers Can Contact Organizers directly</li>
+                <li className="flex items-center gap-3"><span className="text-gold">✓</span> Multilingual Support Staff Available</li>
+                <li className="flex items-center gap-3"><span className="text-gold">✓</span> 24/7 Emergency & Out-of-Hours Support</li>
+              </ul>
+            </div>
           </div>
-          
+
           <div className="flex-1">
             <h2 className="text-4xl font-serif font-bold text-navy mb-6">Seamless Operations, Every Time.</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">

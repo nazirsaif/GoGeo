@@ -22,7 +22,7 @@ export default function VehicleCategories() {
             <p className="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
               VIP Mercedes Sprinters and premium coaches for corporate and luxury travel.
             </p>
-            <span className="inline-block bg-white text-black px-4 py-2 rounded-full font-semibold text-sm">
+            <span className="inline-block bg-gray-200 text-black px-4 py-2 rounded-full font-semibold text-sm">
               View Executive Fleet &rarr;
             </span>
           </div>
@@ -45,7 +45,7 @@ export default function VehicleCategories() {
             <p className="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
               Comfortable, reliable, and cost-effective transport for schools, events, and trips.
             </p>
-            <span className="inline-block bg-white text-black px-4 py-2 rounded-full font-semibold text-sm">
+            <span className="inline-block bg-gray-200 text-black px-4 py-2 rounded-full font-semibold text-sm">
               View Standard Fleet &rarr;
             </span>
           </div>
