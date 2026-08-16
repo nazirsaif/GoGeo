@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="col-span-1 md:col-span-1">
           <Link href="/" className="inline-block mb-4">
-            <Image src="/logo.jpeg" alt="GoGeo Logo" width={140} height={48} className="object-contain rounded-sm" style={{ width: "auto" }} />
+            <Image src="/logo.jpeg" alt="GoGeo Logo" width={80} height={80} className="object-contain rounded-sm" style={{ width: "auto" }} />
           </Link>
           <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
             Premium bus rental and transport solutions across the UK and Europe. Your journey, our priority.

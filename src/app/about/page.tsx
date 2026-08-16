@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import AnimatedStat from "../../components/ui/AnimatedStat";
 
 export default function AboutPage() {
   return (
@@ -29,15 +30,15 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
-                <span className="block text-2xl font-bold text-navy">15+</span>
+                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={15} suffix="+" /></span>
                 <span className="text-sm text-gray-500 font-medium">Years Experience</span>
               </div>
               <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
-                <span className="block text-2xl font-bold text-navy">6,000+</span>
+                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={6000} suffix="+" /></span>
                 <span className="text-sm text-gray-500 font-medium">Bookings Done</span>
               </div>
               <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
-                <span className="block text-2xl font-bold text-navy">15,000+</span>
+                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={15000} suffix="+" /></span>
                 <span className="text-sm text-gray-500 font-medium">Miles Covered</span>
               </div>
             </div>
@@ -45,8 +46,8 @@ export default function AboutPage() {
 
           <div className="w-full relative h-[300px] sm:h-[400px] md:h-[500px] md:flex-1 rounded-2xl overflow-hidden shadow-2xl shrink-0">
             <img
-              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200"
-              alt="Premium Coach Interior"
+              src="/about-us.jpeg"
+              alt="About GoGeo Buses"
               className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>

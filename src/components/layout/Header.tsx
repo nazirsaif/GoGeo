@@ -21,7 +21,7 @@ export default function Header() {
         
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.jpeg" alt="GoGeo Buses Logo" width={64} height={64} className="object-contain rounded-sm" priority style={{ width: "auto" }} />
+          <Image src="/logo.jpeg" alt="GoGeo Buses Logo" width={48} height={48} className="object-contain rounded-sm" priority style={{ width: "auto" }} />
         </Link>
 
         {/* Navigation */}
