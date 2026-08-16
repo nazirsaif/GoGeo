@@ -43,8 +43,8 @@ export default function Home() {
         <div className="relative z-30 container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
 
           <FadeIn direction="right" delay={0.2} className="w-full lg:w-5/12 text-white text-center lg:text-left mt-10">
-            <h4 className="text-gold font-bold tracking-widest text-sm uppercase mb-4 drop-shadow-md">Professional Group Transport</h4>
-            <h1 className="text-5xl md:text-7xl font-serif tracking-tight leading-tight mb-6 drop-shadow-lg">
+            <h4 className="text-gold font-bold tracking-widest text-sm uppercase mb-4 drop-shadow-md">Europe's #1 Group Travel Transport</h4>
+            <h1 className="text-4xl md:text-6xl font-serif tracking-tight leading-tight mb-6 drop-shadow-lg">
               Reliable Coach and Minibus Transport
             </h1>
             <p className="text-xl md:text-2xl font-light text-gray-200 mb-8 max-w-xl mx-auto lg:mx-0 drop-shadow-md">

@@ -11,7 +11,7 @@ export default function ServicesPage() {
     { id: "weddings-events", title: "Weddings & Events", desc: "Elegant transport solutions for guests, bridal parties, and event planners.", icon: <HeartHandshake size={48} className="text-navy" /> },
     { id: "sports-team-transport", title: "Sports-Team Transport", desc: "Spacious coaches with large luggage storage for equipment and teams.", icon: <Trophy size={48} className="text-navy" /> },
     { id: "european-tours", title: "European Tours", multiDay: true, desc: "Multi-day cross-border transport covering France, Germany, Italy, and beyond.", icon: <Map size={48} className="text-navy" /> },
-    { id: "hotel-cruise-transfers", title: "Hotel & Cruise Transfers", desc: "Comfortable connections from major ports and luxury hotels across the UK.", icon: <Ship size={48} className="text-navy" /> },
+    { id: "hotel-cruise-transfers", title: "Hotel & Cruise Transfers", desc: "Comfortable connections from major ports and luxury hotels across the UK and EU.", icon: <Ship size={48} className="text-navy" /> },
     { id: "f1-events", title: "F1 Events", desc: "Dedicated group transport for Formula 1 races, ensuring you arrive on time and never miss a lap.", icon: <Flag size={48} className="text-navy" /> },
     { id: "music-festivals", title: "Music Festivals", desc: "Reliable coach hire for festival-goers, with plenty of room for luggage and camping gear.", icon: <Music size={48} className="text-navy" /> },
     { id: "exhibitions", title: "Exhibitions & Trade Shows", desc: "Shuttle services and VIP transport for massive public exhibitions and corporate trade shows.", icon: <Ticket size={48} className="text-navy" /> },

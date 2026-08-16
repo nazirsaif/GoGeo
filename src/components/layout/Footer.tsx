@@ -50,7 +50,7 @@ export default function Footer() {
           <ul className="text-gray-400 space-y-2 text-sm">
             <li>Email: <a href="mailto:info@gogeobuses.com" className="hover:text-gold transition-colors">info@gogeobuses.com</a></li>
             <li>Phone: <a href="tel:+447537158644" className="hover:text-gold transition-colors">+44 7537 158644</a></li>
-            <li>Address: London, United Kingdom</li>
+            <li>Address: 128 City Road, London, EC1V 2NX, United Kingdom</li>
           </ul>
         </div>
 

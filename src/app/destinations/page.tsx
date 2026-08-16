@@ -21,7 +21,7 @@ export default function DestinationsPage() {
         { name: "Belgium", cities: ["Brussels", "Bruges", "Ghent", "Antwerp", "Leuven", "Liège", "Namur", "Dinant"] },
         { name: "Netherlands", cities: ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Delft", "Haarlem", "Maastricht", "Leiden", "Giethoorn"] },
         { name: "Luxembourg", cities: ["Luxembourg City", "Vianden", "Echternach"] },
-        { name: "Monaco", cities: ["Monaco"] }
+        { name: "Monaco", cities: ["Monaco Ville", "Monte Carlo"] }
       ]
     },
     {
@@ -80,7 +80,8 @@ export default function DestinationsPage() {
         { name: "Japan", cities: ["Tokyo", "Osaka", "Kyoto", "Yokohama", "Nagoya", "Sapporo", "Fukuoka", "Kobe", "Hiroshima", "Sendai"] },
         { name: "Saudi Arabia", cities: ["Riyadh", "Jeddah", "Mecca", "Medina", "Dammam", "Khobar", "Taif", "Tabuk", "Abha", "Jubail"] },
         { name: "United Arab Emirates", cities: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain", "Al Ain"] },
-        { name: "Australia", cities: ["Sydney", "Melbourne"] }
+        { name: "Australia", cities: ["Sydney", "Melbourne"] },
+        { name: "United States", cities: ["Miami", "Las Vegas"] }
       ]
     }
   ];

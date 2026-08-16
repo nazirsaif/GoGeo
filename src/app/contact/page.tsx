@@ -1,13 +1,39 @@
 "use client";
 
 import React, { useState } from "react";
+import { MapPin, Phone, Clock } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      emailAddress: formData.get('emailAddress'),
+      message: formData.get('message'),
+    };
+    
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -33,7 +59,7 @@ export default function ContactPage() {
 
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="text-gold text-3xl mt-1">📍</div>
+                <div className="text-gold mt-1"><MapPin size={32} /></div>
                 <div>
                   <h4 className="text-xl font-bold text-navy mb-1">Operating Address</h4>
                   <p className="text-gray-600">GoGeo Buses LTD</p>
@@ -44,7 +70,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-gold text-3xl mt-1">📞</div>
+                <div className="text-gold mt-1"><Phone size={32} /></div>
                 <div>
                   <h4 className="text-xl font-bold text-navy mb-1">Public Telephone</h4>
                   <p className="text-gray-600">
@@ -54,7 +80,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-gold text-3xl mt-1">🕒</div>
+                <div className="text-gold mt-1"><Clock size={32} /></div>
                 <div>
                   <h4 className="text-xl font-bold text-navy mb-1">Business Hours</h4>
                   <p className="text-gray-600">Open 24/7 for emergency and out-of-hours support.</p>
@@ -89,18 +115,18 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Full Name</label>
-                    <input type="text" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="John Doe" />
+                    <input type="text" name="name" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="John Doe" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Email Address</label>
-                    <input type="email" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="john@example.com" />
+                    <input type="email" name="emailAddress" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="john@example.com" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Message</label>
-                    <textarea required rows={5} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="How can we help you?"></textarea>
+                    <textarea name="message" required rows={5} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="How can we help you?"></textarea>
                   </div>
-                  <button type="submit" className="w-full bg-gold hover:bg-yellow-600 text-white font-bold py-4 rounded-lg transition-colors shadow-lg">
-                    Send Message
+                  <button type="submit" disabled={isSubmitting} className="w-full bg-gold hover:bg-yellow-600 text-white font-bold py-4 rounded-lg transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                    {isSubmitting ? "Sending Message..." : "Send Message"}
                   </button>
                 </form>
               )}

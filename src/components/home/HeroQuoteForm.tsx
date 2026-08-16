@@ -19,6 +19,9 @@ export default function HeroQuoteForm() {
     phoneNumber: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -27,16 +30,36 @@ export default function HeroQuoteForm() {
     setFormData({ ...formData, phoneNumber: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Submit to backend API
-    console.log("Form Data Submitted:", formData);
-    alert("Quote request submitted successfully!");
+    setIsSubmitting(true);
+    
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (res.ok) {
+        setIsSuccess(true);
+      } else {
+        alert("Failed to submit request. Please try again later.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="bg-white/10 backdrop-blur-md p-4 sm:p-8 rounded-xl shadow-2xl w-full max-w-lg border border-white/20">
       <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Get an Instant Quote</h2>
+      {isSuccess ? (
+        <div className="bg-green-500/20 text-white p-6 rounded-lg text-center font-medium border border-green-400">
+          Thank you! Your quote request has been sent successfully. Please check your email for confirmation.
+        </div>
+      ) : (
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
         
         <div className="flex flex-col sm:flex-row gap-4">
@@ -75,14 +98,14 @@ export default function HeroQuoteForm() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="flex-1">
+        <div className="flex flex-col sm:flex-row gap-4 overflow-hidden">
+          <div className="flex-1 min-w-0">
             <label className="block text-sm font-medium text-gray-200 mb-1">Start Date</label>
-            <input type="date" name="startDate" required onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
+            <input type="date" name="startDate" required onChange={handleChange} className="w-full block min-w-0 px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
           </div>
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <label className="block text-sm font-medium text-gray-200 mb-1">Start Time</label>
-            <input type="time" name="startTime" required onChange={handleChange} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
+            <input type="time" name="startTime" required onChange={handleChange} className="w-full block min-w-0 px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none" />
           </div>
         </div>
 
@@ -119,10 +142,11 @@ export default function HeroQuoteForm() {
           <textarea name="additionalDetails" onChange={handleChange} placeholder="Extra details, luggage requirements, etc." rows={6} className="w-full px-4 py-2 rounded-md bg-white/80 text-black border-none focus:ring-2 focus:ring-blue-500 outline-none resize-none" />
         </div>
 
-        <button type="submit" className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-md transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-          Get My Quote
+        <button type="submit" disabled={isSubmitting} className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-md transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed">
+          {isSubmitting ? "Sending Request..." : "Get My Quote"}
         </button>
       </form>
+      )}
     </div>
   );
 }

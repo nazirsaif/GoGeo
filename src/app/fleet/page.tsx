@@ -32,7 +32,7 @@ export default async function FleetPage(props: { searchParams: Promise<{ categor
             {currentCategory === 'executive' ? 'Executive Vehicles' : currentCategory === 'standard' ? 'Standard Vehicles' : 'Vehicle Options'}
           </h1>
           <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto">
-            From 4-seater VIP Mercedes to 75+ seater Double-Decker coaches, our 100% owned fleet ensures safety and comfort.
+            From 4-seater VIP Mercedes to 75+ seater Double-Decker coaches, our modern, premium fleet ensures safety and comfort.
           </p>
 
           <div className="mt-8 flex justify-center gap-4">

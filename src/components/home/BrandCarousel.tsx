@@ -10,10 +10,10 @@ const brands = [
   { name: "Ferrari", url: "/logos/ferrari.svg" },
   { name: "BMW", url: "/logos/bmw.svg" },
   { name: "Shell", url: "/logos/shell.svg" },
-  { name: "Sony", url: "/logos/sony.svg" },
-  { name: "Brand 1", url: "/logos/new 1.png" },
+  { name: "Sony", url: "/logos/sony.svg", imgClass: "h-20 max-w-[180px]" },
+  { name: "Brand 1", url: "/logos/new 1.png", imgClass: "h-20 max-w-[180px]" },
   { name: "Brand 2", url: "/logos/new 2.png" },
-  { name: "Brand 3", url: "/logos/new 3.png" },
+  { name: "Brand 3", url: "/logos/new 3.png", imgClass: "h-20 max-w-[180px]" },
   { name: "Brand 4", url: "/logos/new 4.png" }
 ];
 
@@ -42,7 +42,7 @@ export default function BrandCarousel() {
               <img
                 src={brand.url}
                 alt={brand.name}
-                className="h-12 w-auto max-w-[120px] object-contain"
+                className={`w-auto object-contain ${brand.imgClass || 'h-12 max-w-[120px]'}`}
               />
             </div>
           ))}
