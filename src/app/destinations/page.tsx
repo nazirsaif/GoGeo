@@ -32,7 +32,6 @@ export default function DestinationsPage() {
         { name: "Austria", cities: ["Vienna", "Salzburg", "Innsbruck", "Graz", "Hallstatt", "Linz", "Zell am See"] },
         { name: "Czechia", cities: ["Prague", "Brno", "Český Krumlov", "Karlovy Vary", "Ostrava"] },
         { name: "Poland", cities: ["Warsaw", "Kraków", "Gdańsk", "Wrocław", "Poznań", "Łódź", "Szczecin", "Zakopane", "Toruń"] },
-        { name: "Slovakia", cities: ["Bratislava", "Košice", "Banská Bystrica", "Poprad", "Žilina"] },
         { name: "Hungary", cities: ["Budapest", "Debrecen", "Szentendre", "Eger", "Pécs", "Lake Balaton"] }
       ]
     },
@@ -70,8 +69,7 @@ export default function DestinationsPage() {
     {
       name: "Southeastern Europe",
       countries: [
-        { name: "Croatia", cities: ["Zagreb", "Dubrovnik", "Split", "Zadar", "Pula", "Rijeka", "Šibenik", "Trogir"] },
-        { name: "Slovenia", cities: ["Ljubljana", "Bled", "Piran", "Maribor", "Koper", "Bohinj"] }
+        { name: "Croatia", cities: ["Zagreb", "Dubrovnik", "Split", "Zadar", "Pula", "Rijeka", "Šibenik", "Trogir"] }
       ]
     },
     {

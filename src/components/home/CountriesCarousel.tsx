@@ -40,8 +40,6 @@ const countries = [
   { name: "San Marino", code: "sm" },
   { name: "Scotland", code: "gb-sct" },
   { name: "Serbia", code: "rs" },
-  { name: "Slovakia", code: "sk" },
-  { name: "Slovenia", code: "si" },
   { name: "Spain", code: "es" },
   { name: "Sweden", code: "se" },
   { name: "Switzerland", code: "ch" },

@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   try {
     const data = await request.json();
     const { 
-      startDate, startTime, pickupAddress, destination, 
+      startDate, startTime, endDate, endTime, pickupAddress, destination, 
       additionalDetails, passengers, isRoundTrip, 
       name, surname, emailAddress, phoneNumber 
     } = data;
@@ -24,7 +24,8 @@ export async function POST(request: Request) {
         <p><strong>Phone:</strong> ${phoneNumber}</p>
         <p><strong>Pickup:</strong> ${pickupAddress}</p>
         <p><strong>Destination:</strong> ${destination}</p>
-        <p><strong>Date & Time:</strong> ${startDate} at ${startTime}</p>
+        <p><strong>Start Date & Time:</strong> ${startDate} at ${startTime}</p>
+        <p><strong>End Date & Time:</strong> ${endDate} at ${endTime}</p>
         <p><strong>Passengers:</strong> ${passengers}</p>
         <p><strong>Round Trip:</strong> ${isRoundTrip ? 'Yes' : 'No'}</p>
         <p><strong>Additional Details:</strong> ${additionalDetails || 'None'}</p>
@@ -39,6 +40,11 @@ export async function POST(request: Request) {
       html: `
         <h2>Thank you for your request, ${name}!</h2>
         <p>We have successfully received your request for a trip to <strong>${destination}</strong>.</p>
+        <p><strong>Trip Details:</strong></p>
+        <ul>
+          <li><strong>Start:</strong> ${startDate} at ${startTime}</li>
+          <li><strong>End:</strong> ${endDate} at ${endTime}</li>
+        </ul>
         <p>Our team is currently calculating your quote based on your requirements and will get back to you within 24 hours.</p>
         <br/>
         <p>Best regards,</p>

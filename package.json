@@ -9,10 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@types/react-datepicker": "^6.2.0",
     "framer-motion": "^13.1.0",
     "lucide-react": "^1.31.0",
     "next": "16.3.0",
     "react": "19.2.8",
+    "react-datepicker": "^9.1.0",
     "react-dom": "19.2.8",
     "react-phone-input-2": "^2.15.1",
     "resend": "^6.20.0"

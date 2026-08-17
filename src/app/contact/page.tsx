@@ -115,15 +115,15 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Full Name</label>
-                    <input type="text" name="name" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="John Doe" />
+                    <input type="text" name="name" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50 text-gray-900" placeholder="John Doe" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Email Address</label>
-                    <input type="email" name="emailAddress" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="john@example.com" />
+                    <input type="email" name="emailAddress" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50 text-gray-900" placeholder="john@example.com" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-navy mb-2">Message</label>
-                    <textarea name="message" required rows={5} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50" placeholder="How can we help you?"></textarea>
+                    <textarea name="message" required rows={5} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gold outline-none bg-gray-50 text-gray-900" placeholder="How can we help you?"></textarea>
                   </div>
                   <button type="submit" disabled={isSubmitting} className="w-full bg-gold hover:bg-yellow-600 text-white font-bold py-4 rounded-lg transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
                     {isSubmitting ? "Sending Message..." : "Send Message"}

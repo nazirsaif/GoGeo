@@ -18,7 +18,6 @@ const countries = [
   { name: "Austria", iso: "at", image: "/destinations/austria.jpg" },
   { name: "Czechia", iso: "cz", image: "/destinations/czechia.jpg" },
   { name: "Poland", iso: "pl", image: "/destinations/poland.jpg" },
-  { name: "Slovakia", iso: "sk", image: "/destinations/slovakia.jpg" },
   { name: "Hungary", iso: "hu", image: "/destinations/hungary.jpg" },
   { name: "Italy", iso: "it", image: "/destinations/italy.jpg" },
   { name: "Spain", iso: "es", image: "/destinations/spain.jpg" },
@@ -37,7 +36,6 @@ const countries = [
   { name: "Romania", iso: "ro", image: "/destinations/romania.jpg" },
   { name: "Bulgaria", iso: "bg", image: "/destinations/bulgaria.jpg" },
   { name: "Croatia", iso: "hr", image: "/destinations/croatia.jpg" },
-  { name: "Slovenia", iso: "si", image: "/destinations/slovenia.jpg" },
   { name: "Japan", iso: "jp", image: "/destinations/japan.jpg" },
   { name: "Saudi Arabia", iso: "sa", image: "/destinations/saudi_arabia.jpg" },
   { name: "United Arab Emirates", iso: "ae", image: "/destinations/united_arab_emirates.jpg" },
@@ -53,7 +51,7 @@ export default function CountryCarousel() {
     <div className="w-full overflow-hidden bg-white py-12 relative border-b border-gray-100 shadow-inner">
       <div className="container mx-auto px-6 mb-8 text-center">
         <h2 className="text-2xl font-serif font-bold text-navy">Explore Our Network</h2>
-        <p className="text-gray-500 text-sm mt-2">Serving 42 countries across the UK and Europe. Click a destination to get a quote.</p>
+        <p className="text-gray-500 text-sm mt-2">Serving 40 countries across the UK and Europe. Click a destination to get a quote.</p>
       </div>
 
       {/* Fade Edges */}

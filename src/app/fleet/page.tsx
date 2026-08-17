@@ -7,14 +7,14 @@ export default async function FleetPage(props: { searchParams: Promise<{ categor
   const currentCategory = searchParams?.category;
   const fleet = [
     { name: "4 Seater Mercedes E/S-Class", img: "/fleet/e-class-1.jpeg", capacity: 4, type: "VIP Car", desc: "Perfect for discrete, luxury executive travel.", category: "executive" },
-    { name: "7 Seater Mercedes V-Class", img: "/fleet/v-class.jpeg", capacity: 7, type: "VIP MPV", desc: "Spacious luxury for small corporate teams or families.", category: "executive" },
-    { name: "16 Seater Mercedes Sprinter", img: "/fleet/sprinter-1.jpeg", capacity: 16, type: "Minibus", desc: "Ideal for airport transfers and small group outings.", category: "standard" },
+    { name: "7 Seater Mercedes V-Class", img: "/fleet/v-class-new.jpeg", capacity: 7, type: "VIP MPV", desc: "Spacious luxury for small corporate teams or families.", category: "executive" },
+    { name: "16 Seater Mercedes Sprinter", img: "/fleet/sprinter-1.jpeg", capacity: 16, type: "Minibus", desc: "Ideal for airport transfers and small group outings.", category: "executive" },
     { name: "16 Seater Standard Sprinter", img: "/fleet/16-seater-standard-sprinter.jpeg", capacity: 16, type: "Standard Minibus", desc: "Reliable and affordable transport for small groups.", category: "standard" },
     { name: "23 Seater VIP Minibus Mercedes", img: "/fleet/23-seater.jpeg", capacity: 23, type: "VIP Minibus", desc: "Premium comfort for medium-sized executive groups.", category: "executive" },
-    { name: "30 Seater Standard Coach", img: "/fleet/30-seater.jpeg", capacity: 30, type: "Standard Coach", desc: "Reliable and comfortable for school trips and sports teams.", category: "standard" },
-    { name: "43 Seater Standard Coach", img: "/fleet/43-seater.jpeg", capacity: 43, type: "Standard Coach", desc: "Great for corporate events and domestic tours.", category: "standard" },
+    { name: "30 Seater Standard Coach", img: "/fleet/30-seater.jpeg", capacity: 30, type: "Standard Coach", desc: "Reliable and comfortable for school trips and sports teams.", category: "standard", hasMic: true },
+    { name: "43 Seater Standard Coach", img: "/fleet/43-seater.jpeg", capacity: 43, type: "Standard Coach", desc: "Great for corporate events and domestic tours.", category: "standard", premium: true, noWC: true },
     { name: "53 Seater Executive Coach", img: "/fleet/53-seater-1.jpeg", capacity: 53, type: "Executive Coach", desc: "Luxury long-distance travel.", premium: true, category: "executive" },
-    { name: "55 Seater Standard Coach", img: "/fleet/55-seater.jpeg", capacity: 55, type: "Standard Coach", desc: "High capacity transport for large groups.", category: "standard" },
+    { name: "55 Seater Standard Coach", img: "/fleet/55-seater.jpeg", capacity: 55, type: "Standard Coach", desc: "High capacity transport for large groups.", category: "standard", premium: true },
     { name: "72 Seater Double Decker", img: "/fleet/72-seater-1.jpeg", capacity: 72, type: "Double Decker", desc: "Maximum capacity for massive events and school groups.", premium: true, category: "standard" },
   ];
 
@@ -76,6 +76,9 @@ export default async function FleetPage(props: { searchParams: Promise<{ categor
                     <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Air Conditioning</span>
                     <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Reclining Seats</span>
                     <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Seat Belts</span>
+                    {(vehicle as any).hasMic && (
+                      <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Microphone/PA</span>
+                    )}
                   </div>
 
                   {/* Premium Amenities (Only for 50+ seats) */}
@@ -87,7 +90,9 @@ export default async function FleetPage(props: { searchParams: Promise<{ categor
                         <li className="flex items-center gap-1"><span className="text-gold">✓</span> Advanced A/C</li>
                         <li className="flex items-center gap-1"><span className="text-gold">✓</span> DVD/Entertainment</li>
                         <li className="flex items-center gap-1"><span className="text-gold">✓</span> Power Outlets</li>
-                        <li className="flex items-center gap-1"><span className="text-gold">✓</span> Onboard WC</li>
+                        {!(vehicle as any).noWC && (
+                          <li className="flex items-center gap-1"><span className="text-gold">✓</span> Onboard WC</li>
+                        )}
                       </ul>
                     </div>
                   )}

@@ -11,7 +11,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl font-serif font-bold mb-4">About GoGeo Buses</h1>
           <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto">
-            10 years of excellence in providing premium group travel transportation across the UK and Europe.
+            15 years of excellence in providing premium group travel transportation across the UK and Europe.
           </p>
         </div>
       </section>
@@ -23,17 +23,17 @@ export default function AboutPage() {
             <h2 className="text-gold text-sm font-bold uppercase tracking-widest mb-2">Our Story</h2>
             <h3 className="text-3xl font-serif font-bold text-navy mb-6">Established for Luxury Travel</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              For over 10 years, we have proudly operated as a family run business, built on trust, experience, and a commitment to exceptional service. Over the past five years, we have significantly expanded our operations across Europe.
+              For over 15 years, we have proudly operated as a family run business, built on trust, experience, and a commitment to exceptional service. Over the past five years, we have significantly expanded our operations across Europe.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              GoGeo Buses LTD was established with a singular vision: to provide luxury group travel transportation across Europe. Over the past 10 years, we have built a reputation based on uncompromising professionalism and exceptional customer service.
+              GoGeo Buses LTD was established with a singular vision: to provide luxury group travel transportation across Europe. Over the past 15 years, we have built a reputation based on uncompromising professionalism and exceptional customer service.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              We own and operate our expansive fleet, meaning we have full control over the quality, safety, and maintenance of every vehicle. From comfortable minibuses to 75-seater double-decker coaches, we guarantee premium transportation at affordable prices.
+              We operate an expansive fleet, meaning we maintain strict control over the quality, safety, and maintenance of every vehicle. From comfortable minibuses to 75-seater double-decker coaches, we guarantee premium transportation at affordable prices.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
-                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={10} suffix="+" /></span>
+                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={15} suffix="+" /></span>
                 <span className="text-sm text-gray-500 font-medium">Years Experience</span>
               </div>
               <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
