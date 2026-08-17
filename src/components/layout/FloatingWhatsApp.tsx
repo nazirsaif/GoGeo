@@ -31,16 +31,16 @@ export default function FloatingWhatsApp() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Tooltip Notification */}
       <div 
-        className={`mb-4 mr-2 relative bg-gray-200 text-navy px-5 py-3 rounded-2xl shadow-2xl border border-gray-100 font-bold text-sm whitespace-nowrap transition-all duration-700 origin-bottom-right
+        className={`mb-4 mr-2 relative bg-gold text-white px-5 py-3 rounded-2xl shadow-2xl border border-yellow-500 font-bold text-sm whitespace-nowrap transition-all duration-700 origin-bottom-right
           ${showTooltip ? 'opacity-100 scale-100 translate-y-0 animate-bounce' : 'opacity-0 scale-90 translate-y-4 pointer-events-none'}
         `}
       >
         <span className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-          Chat with our professional agent to get an instant quote
+          Get an instant quote
         </span>
         {/* Tail / Arrow */}
-        <div className="absolute -bottom-2 right-4 w-4 h-4 bg-gray-200 border-b border-r border-gray-100 transform rotate-45"></div>
+        <div className="absolute -bottom-2 right-4 w-4 h-4 bg-gold border-b border-r border-yellow-500 transform rotate-45"></div>
       </div>
 
       <a

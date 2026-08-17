@@ -12,9 +12,7 @@ const brands = [
   { name: "Shell", url: "/logos/shell.svg" },
   { name: "Sony", url: "/logos/sony.svg", imgClass: "h-20 max-w-[180px]" },
   { name: "Brand 1", url: "/logos/new 1.png", imgClass: "h-20 max-w-[180px]" },
-  { name: "Brand 2", url: "/logos/new 2.png" },
-  { name: "Brand 3", url: "/logos/new 3.png", imgClass: "h-20 max-w-[180px]" },
-  { name: "Brand 4", url: "/logos/new 4.png" }
+  { name: "Brand 3", url: "/logos/new 3.png", imgClass: "h-20 max-w-[180px]" }
 ];
 
 export default function BrandCarousel() {
