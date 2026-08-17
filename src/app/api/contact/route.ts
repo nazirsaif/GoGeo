@@ -10,8 +10,8 @@ export async function POST(request: Request) {
 
     // Email to Admin (You)
     const adminEmail = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>', // Update this to your verified domain later (e.g. contact@gogeobuses.com)
-      to: emailAddress, // Sending to the client's email for testing. In production, change this to your email (e.g., info@gogeobuses.com)
+      from: 'GoGeo Buses <info@gogeobuses.com>', 
+      to: 'info@gogeobuses.com', 
       subject: `New Contact Message from ${name}`,
       html: `
         <h2>New Contact Message</h2>
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
     // Auto-reply to Client
     const clientEmail = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>', // Update to your domain later
+      from: 'GoGeo Buses <info@gogeobuses.com>', 
       to: emailAddress,
       subject: `We received your message, ${name}!`,
       html: `
