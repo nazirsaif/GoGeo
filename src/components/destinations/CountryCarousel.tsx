@@ -41,7 +41,8 @@ const countries = [
   { name: "Japan", iso: "jp", image: "/destinations/japan.jpg" },
   { name: "Saudi Arabia", iso: "sa", image: "/destinations/saudi_arabia.jpg" },
   { name: "United Arab Emirates", iso: "ae", image: "/destinations/united_arab_emirates.jpg" },
-  { name: "Australia", iso: "au", image: "/destinations/australia.jpg" }
+  { name: "Australia", iso: "au", image: "/destinations/australia.jpg" },
+  { name: "United States", iso: "us", image: "/destinations/united_states.jpg" }
 ];
 
 export default function CountryCarousel() {
