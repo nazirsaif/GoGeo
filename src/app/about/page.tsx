@@ -37,12 +37,12 @@ export default function AboutPage() {
                 <span className="text-sm text-gray-500 font-medium">Years Experience</span>
               </div>
               <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
-                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={6000} suffix="+" /></span>
-                <span className="text-sm text-gray-500 font-medium">Bookings Done</span>
+                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={23782} /></span>
+                <span className="text-sm text-gray-500 font-medium">Bookings</span>
               </div>
               <div className="bg-white border-l-4 border-gold p-4 shadow-sm flex-1 min-w-[140px]">
-                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={15000} suffix="+" /></span>
-                <span className="text-sm text-gray-500 font-medium">Miles Covered</span>
+                <span className="block text-2xl font-bold text-navy"><AnimatedStat endValue={156755} /></span>
+                <span className="text-sm text-gray-500 font-medium">Miles</span>
               </div>
             </div>
           </div>
